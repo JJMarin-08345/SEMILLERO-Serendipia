@@ -1,6 +1,8 @@
 //Vamos a crear el componente boton 
-export default Boton = () => {
+import '../App.css'
+
+export function Boton({texto}) {
   return (
-    <div>Boton</div>
+    <button> {texto} </button>
   )
 }

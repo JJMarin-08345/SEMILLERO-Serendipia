@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { Correo, Clave } from './pages/Admin.jsx';
 import { registroUsuario } from './pages/Registro';
 import { buscarUsuarios } from './pages/Funciones.';
+import { Boton } from './componentes/Boton';
 
 //Creamos un componente
 function App() {
@@ -46,8 +47,9 @@ function App() {
       }
     }
   }
-
+  //Codigo html y jsx 
   return (
+    <>
     <div className="login-page">
       <div className="form">
         <form className={formRegistro}
@@ -69,7 +71,7 @@ function App() {
             onChange={ev => setClave(ev.target.value)}
           />
 
-          <button> Registrarse </button>
+          <Boton texto={"Registrarse"}/>
           <p className="message">Ya esta registrado?
             <a href='#' onClick={handleClick}> Inicia Sesión</a>
           </p>
@@ -90,13 +92,14 @@ function App() {
             onChange={ev => setClave(ev.target.value)}
           />
 
-          <button>Iniciar Sesión</button>
+          <Boton texto={"Iniciar Sesión"} />
           <p className="message">No está registrado?
             <a href='#' onClick={handleClick}> Create una cuenta  </a>
           </p>
         </form>
       </div>
     </div>
+    </>
   )
 }
 //Funcion que se encarga de verificar el correo y la clave 

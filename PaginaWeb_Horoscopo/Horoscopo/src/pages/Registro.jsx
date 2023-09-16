@@ -1,3 +1,6 @@
+import { Boton } from "../componentes/Boton";
+import { Link } from "react-router-dom";
+import '../App.css';
 
 export const Usuarios = [
     {
@@ -46,6 +49,7 @@ export function registroUsuario(nombre, correo, clave) {
 
 export default function Registro() {
     return (
+        <>
         <div>
             <h1>Usuarios: </h1>
             {Usuarios.map(users => (
@@ -54,6 +58,10 @@ export default function Registro() {
                 </div>
                 )
             )}
+            <Link to={("/")}>
+                <Boton texto={"Regresar"} /> 
+            </Link>
         </div>
+        </>
     )
 }
