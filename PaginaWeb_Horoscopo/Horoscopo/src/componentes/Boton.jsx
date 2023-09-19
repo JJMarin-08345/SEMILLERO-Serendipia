@@ -1,8 +1,8 @@
 //Vamos a crear el componente boton 
-import '../App.css'
+import './Boton.css'
 
 export function Boton({texto}) {
   return (
-    <button> {texto} </button>
+    <button className='button'> {texto} </button>
   )
 }

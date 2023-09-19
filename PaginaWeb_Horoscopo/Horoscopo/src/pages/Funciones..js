@@ -1,4 +1,6 @@
-import { Usuarios } from "./Registro";
+import { Data_Usuarios } from "../Bd/bdUsuarios";
+
+const Usuarios = Data_Usuarios;
 
 //Funcion para buscar usuarios y retornarlos
 export function buscarUsuarios(correo){

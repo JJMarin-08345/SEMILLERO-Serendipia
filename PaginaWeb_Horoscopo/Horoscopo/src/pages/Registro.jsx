@@ -1,36 +1,11 @@
 import { Boton } from "../componentes/Boton";
 import { Link } from "react-router-dom";
-import '../App.css';
-
-export const Usuarios = [
-    {
-        id: 0,
-        nombre: "Juan Jose",
-        correo: "juanjo@gmail.com",
-        clave: "clave123"
-    },
-    {
-        id: 1,
-        nombre: "Sofia Geraldine",
-        correo: "sofipz@hotmail.com",
-        clave: "sofia123"
-    },
-    {
-        id: 2,
-        nombre: "Carlos Arturo",
-        correo: "carlosAro@hotmail.com",
-        clave: "carlos456"
-    },
-    {
-        id: 3,
-        nombre: "Felipe Castañeda",
-        clave: "felipe231"
-    }
-]
+import { useQuery } from "@tanstack/react-query";
+import { createUsuario, getUsuarios } from "../api/UsuariosAPI";
+import { useMutation } from "@tanstack/react-query";
 
 // console.log(ultimoUsuario)
 // console.log("Registrao con exito "+ Usuarios.correo);
-
 
 export function registroUsuario(nombre, correo, clave) {
     const ultimoUsuario = Usuarios[(Usuarios.length -1)].id;
@@ -44,12 +19,20 @@ export function registroUsuario(nombre, correo, clave) {
     for (var i = 0; i < Usuarios.length; i++) {
         console.log(Usuarios[i]);
     }
-    localStorage.setItem("usuariosRegistraos", JSON.stringify(Usuarios))
 }
 
+
 export default function Registro() {
+    const {isLoading, data: Usuarios, isError, error} = useQuery({
+        queryKey: ["Data_Usuarios"],
+        queryFn: getUsuarios
+    });
+
+    if(isLoading) return <div>Trayendo Datos</div>
+    else if (isError) return alert("Error: "+error.message)
+
+
     return (
-        <>
         <div>
             <h1>Usuarios: </h1>
             {Usuarios.map(users => (
@@ -62,6 +45,5 @@ export default function Registro() {
                 <Boton texto={"Regresar"} /> 
             </Link>
         </div>
-        </>
     )
 }

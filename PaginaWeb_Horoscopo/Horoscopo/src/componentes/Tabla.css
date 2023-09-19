@@ -1,0 +1,56 @@
+table {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	margin: 0; 
+	padding: 0; 
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    font-size: 23px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Agrega sombra al texto */
+    background: hsl(185, 96%, 27%);
+    color: white;
+    font-weight: bold;
+}
+
+td,th {
+    padding: 15px;
+    text-align: left;
+}
+
+/* ESTILOS PARA TODO EL CUERPO <tbody> */
+
+/* Estilo zebra */
+/* Empezamos con los tr impares */
+tr:nth-of-type(odd) {
+    background: #2a2d30;
+}
+/* Los tr pares */
+tr:nth-of-type(even) {
+    background: #343a40;
+}
+/* Color de las letras de todo el <tbody> */
+tbody{
+    font-size: 20px;
+    color: #6c757d;
+}
+/* Esto es para cuando se ponga el mouse encima, cambie el color de la letra a blanco
+y que aumente su tamaño de letra solo a los <tr> dentro del <tbody> */
+tbody tr:hover{
+    color: #a4a4a4;
+    font-size: 23px;
+}
+/* Hacemos que a los <td> dentro del <tbody> */
+tbody tr td:hover{
+    color: aqua;
+}
+
+/* Estilo para el componente Link */
+.Link{
+    color: darkgray;
+    text-decoration: none;
+}
+.Link:hover{
+    color: rgb(166, 22, 166);
+}

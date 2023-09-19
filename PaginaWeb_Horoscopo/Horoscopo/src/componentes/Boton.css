@@ -1,4 +1,4 @@
-#button {
+.button {
     font-family: "Roboto", sans-serif;
     text-transform: uppercase;
     outline: 0;
@@ -13,6 +13,6 @@
     cursor: pointer;
 }
 
-#button:hover,.form button:active,.form button:focus {
+.button:hover,.button button:active,.button button:focus {
     background: hwb(175 0% 82%);
 }
