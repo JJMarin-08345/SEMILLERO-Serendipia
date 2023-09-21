@@ -1,26 +1,10 @@
 import { Boton } from "../componentes/Boton";
 import { Link } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
-import { createUsuario, getUsuarios } from "../api/UsuariosAPI";
-import { useMutation } from "@tanstack/react-query";
+import { getUsuarios } from "../api/UsuariosAPI";
 
 // console.log(ultimoUsuario)
 // console.log("Registrao con exito "+ Usuarios.correo);
-
-export function registroUsuario(nombre, correo, clave) {
-    const ultimoUsuario = Usuarios[(Usuarios.length -1)].id;
-    Usuarios.push({
-        id: (ultimoUsuario+1),
-        nombre: nombre,
-        correo: correo,
-        clave: clave
-    });
-
-    for (var i = 0; i < Usuarios.length; i++) {
-        console.log(Usuarios[i]);
-    }
-}
-
 
 export default function Registro() {
     const {isLoading, data: Usuarios, isError, error} = useQuery({

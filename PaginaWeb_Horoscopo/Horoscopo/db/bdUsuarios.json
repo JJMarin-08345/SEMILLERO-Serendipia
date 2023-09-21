@@ -22,6 +22,18 @@
       "nombre": "Raymond Ayala",
       "correo": "daddyyankee@hotmail.com",
       "clave": "siquirida",
+      "id": 4
+    },
+    {
+      "nombre": "Usuario",
+      "correo": "user@gmail.com",
+      "clave": "usersecreto",
+      "id": 5
+    },
+    {
+      "nombre": "ElViejoMailo",
+      "correo": "mailoAutentico@gmail.com",
+      "clave": "mailomailoso",
       "id": 6
     }
   ]

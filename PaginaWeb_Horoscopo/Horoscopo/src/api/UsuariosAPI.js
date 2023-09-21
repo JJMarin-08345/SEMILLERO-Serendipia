@@ -4,12 +4,25 @@ const UsuariosApi = axios.create({
     baseURL: 'http://localhost:3000/Data_Usuarios'
 })
 
-//GetUsuarios
+
+//GetUsuarios obtener todos los usuarios
 export const getUsuarios = async () => {
     const respuesta = await UsuariosApi.get('/');
     return respuesta.data;
 }
 //Estructura OBLIGATORIA, debe ser así, con su async, su await, y su return variableDeRespuesta.data
+
+//GetUsuariosId obtener usuarios por Id
+export const getUsuariosId = async (correo) => {
+    const respuesta = await UsuariosApi.get(`/?correo=${correo}`);
+    return respuesta.data;
+}
+
+//GetUsuariosCorreo obtener usuarios por Correo
+export const getUsuariosCorreo = async (id) => {
+    const respuesta = await UsuariosApi.get(`/${id}`);
+    return respuesta.data;
+}
 
 //CreateUsuarios
 export const createUsuario = (newUser) =>{

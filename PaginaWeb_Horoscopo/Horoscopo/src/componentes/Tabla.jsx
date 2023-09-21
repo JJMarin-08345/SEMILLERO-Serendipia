@@ -47,7 +47,7 @@ export function Tabla() {
                         <td> {usuarios.correo} </td>
                         <td> {usuarios.clave} </td>
                         <td>  
-                            <Link to={"/User/"} className="Link"> Editar </Link>
+                            <Link to={`/User/${usuarios.id}`} className="Link"> Editar </Link>
                             <button onClick={() => delUserMutation.mutate(usuarios.id) } className="Link"> Eliminar </button>
                         </td>
                     </tr>
