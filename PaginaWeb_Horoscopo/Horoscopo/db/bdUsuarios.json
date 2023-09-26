@@ -31,10 +31,21 @@
       "id": 5
     },
     {
-      "nombre": "ElViejoMailo",
-      "correo": "mailoAutentico@gmail.com",
-      "clave": "mailomailoso",
-      "id": 6
+      "id": 6,
+      "nombre": "Margot",
+      "correo": "robbiemargot@hotmail.com"
+    },
+    {
+      "nombre": "Karen Sofia",
+      "correo": "karensof90@hotmail.com",
+      "clave": "karenkaren",
+      "id": 7
+    },
+    {
+      "nombre": "elesito",
+      "correo": "elesitoig@gmail.com",
+      "clave": "elesitoes",
+      "id": 8
     }
   ]
 }

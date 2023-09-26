@@ -2,9 +2,9 @@ import './App.css';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Correo, Clave } from './pages/Admin.jsx';
-import { buscarUsuarios } from './pages/Funciones.';
 import { Boton } from './componentes/Boton';
 import { useMutation } from '@tanstack/react-query';
+import { getUsuariosCorreo } from './api/UsuariosAPI';
 import { createUsuario } from './api/UsuariosAPI';
 import { Inputs } from './componentes/Inputs';
 
@@ -37,25 +37,13 @@ export default function App() {
     setClave('');
   }
 
-  //Funcion que se encarga de verificar el correo y la clave 
-  const login = async (correo, clave) => {
-    UsuarioLogeo = await buscarUsuarios(correo);
-    // console.log(correo+" "+" ")
-    if (UsuarioLogeo !== null && ValidarCampos(correo)) {
-      if (correo === UsuarioLogeo.correo && clave === UsuarioLogeo.clave) {
-        alert("Logeo para usuario concedido");
-        return true;
-      } else {
-        alert("usuario o contraseña incorrectos");
-      }
-    } else {
-      alert("El usuario no existe");
-    }
-    return false
-  }
-
   //Funcion para saber que se logeo como usuario y lo rediriga a la pagina usuario
-  const LogginLikeUser = (nombreU, correoU, claveU) => {
+  const LogginLikeUser = async (nombreU,correoU,claveU) => {
+    const userEE = await getUsuariosCorreo(correoU);
+    const userEncontrao = userEE[0];
+    console.log(userEE);
+    console.log(claveU);
+
     if (Registrado) {
       let newUser = {
         nombre: nombreU,
@@ -63,14 +51,22 @@ export default function App() {
         clave: claveU
       }
       addUsusario.mutate(newUser);
-      navigate("/User");
+        navigate("/User");
+    
     } else {
       if (correo === Correo && clave === Clave) {
         alert("Logeado como Administrador");
         navigate("/Admin")
       }
-      else if (login(correo, clave)) {
-        navigate("/User")
+      else if (userEncontrao != null && ValidarCampos(correoU)) {
+        if(userEncontrao.correo === correoU && userEncontrao.clave === claveU){
+          alert("Acceso como usuario concedido")
+          navigate(`/User`)
+        }else{
+          alert("Usuario o contraseña incorrectos")
+        }
+      }else{
+        alert("Usuario no existe, registrate")
       }
     }
   }
@@ -131,5 +127,5 @@ export default function App() {
 //Funcion de validación de campos
 const ValidarCampos = (correo) => {
   return correo.includes('@') && correo.includes('.');
-  //false = contiene numeros
 }
+

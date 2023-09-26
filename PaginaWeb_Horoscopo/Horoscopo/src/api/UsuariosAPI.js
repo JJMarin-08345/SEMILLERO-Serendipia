@@ -12,15 +12,15 @@ export const getUsuarios = async () => {
 }
 //Estructura OBLIGATORIA, debe ser así, con su async, su await, y su return variableDeRespuesta.data
 
-//GetUsuariosId obtener usuarios por Id
-export const getUsuariosId = async (correo) => {
-    const respuesta = await UsuariosApi.get(`/?correo=${correo}`);
+//GetUsuariosId obtener usuarios por id
+export const getUsuariosId = async (id) => {
+    const respuesta = await UsuariosApi.get(`/${id}`);
     return respuesta.data;
 }
 
 //GetUsuariosCorreo obtener usuarios por Correo
-export const getUsuariosCorreo = async (id) => {
-    const respuesta = await UsuariosApi.get(`/${id}`);
+export const getUsuariosCorreo = async (correo) => {
+    const respuesta = await UsuariosApi.get(`?correo=${correo}`);
     return respuesta.data;
 }
 
