@@ -32,20 +32,21 @@
     },
     {
       "id": 6,
-      "nombre": "Margot",
-      "correo": "robbiemargot@hotmail.com"
+      "nombre": "Margot" ,
+      "correo": "robbiemargot@hotmail.com",
+      "clave": "margot123"
     },
     {
+      "id":7,
       "nombre": "Karen Sofia",
       "correo": "karensof90@hotmail.com",
-      "clave": "karenkaren",
-      "id": 7
+      "clave": "karenkaren"
     },
     {
-      "nombre": "elesito",
+      "id": 8,
+      "nombre": "Elesito",
       "correo": "elesitoig@gmail.com",
-      "clave": "elesitoes",
-      "id": 8
+      "clave": "elesitoes"
     }
   ]
 }
