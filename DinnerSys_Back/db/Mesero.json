@@ -1,0 +1,155 @@
+{
+  "Meseros": [
+    {
+      "id": 1,
+      "Nombre": "Jean Carlos",
+      "correo": "jeancarlos@restaurante.com",
+      "clave": "jeancarlos",
+      "rol": "mesero"
+    },
+    {
+      "id": 2,
+      "Nombre": "Daniela Lopez",
+      "correo": "danielalopez@restaurante.com",
+      "clave": "danielalopez",
+      "rol": "mesero"
+    }
+  ],
+  "Mesas": [
+    {
+      "id": 1,
+      "MeseroId": 1,
+      "CantidadClientes": 0
+    },
+    {
+      "id": 2,
+      "MeseroId": 1,
+      "CantidadClientes": "5"
+    },
+    {
+      "id": 3,
+      "MeseroId": 2,
+      "CantidadClientes": "2"
+    },
+    {
+      "id": 4,
+      "MeseroId": 1,
+      "CantidadClientes": "3"
+    },
+    {
+      "id": 5,
+      "MeseroId": 2,
+      "CantidadClientes": 0
+    },
+    {
+      "id": 6,
+      "MeseroId": 2,
+      "CantidadClientes": 0
+    },
+    {
+      "id": 7,
+      "MeseroId": 1,
+      "CantidadClientes": 0
+    },
+    {
+      "id": 8,
+      "MeseroId": 1,
+      "CantidadClientes": 0
+    }
+  ],
+  "Productos": [
+    {
+      "id": 1,
+      "Producto": "Hamburguesa",
+      "Precio": 15000
+    },
+    {
+      "id": 2,
+      "Producto": "Pizza Mediana",
+      "Precio": 24500
+    },
+    {
+      "id": 3,
+      "Producto": "Tacos",
+      "Precio": 18000
+    },
+    {
+      "id": 4,
+      "Producto": "Sushi",
+      "Precio": 26400
+    },
+    {
+      "id": 5,
+      "Producto": "Ensalada",
+      "Precio": 13200
+    },
+    {
+      "id": 6,
+      "Producto": "Pasta",
+      "Precio": 14500
+    },
+    {
+      "id": 7,
+      "Producto": "Hot Dog",
+      "Precio": 10700
+    },
+    {
+      "id": 8,
+      "Producto": "Burrito",
+      "Precio": 4700
+    },
+    {
+      "id": 9,
+      "Producto": "Pollo a la Parrilla",
+      "Precio": 35000
+    },
+    {
+      "id": 10,
+      "Producto": "Tarta de Manzana",
+      "Precio": 13700
+    },
+    {
+      "id": 11,
+      "Producto": "Sándwich de Pollo",
+      "Precio": 13000
+    }
+  ],
+  "Pedidos": [
+    {
+      "NombreCliente": "Juan Jose",
+      "MesaId": 2,
+      "MeseroId": 1,
+      "Productos": [
+        1,
+        8,
+        9,
+        10
+      ],
+      "PrecioTotal": 68400,
+      "id": 1
+    },
+    {
+      "NombreCliente": "Fernanda",
+      "MesaId": 4,
+      "MeseroId": 1,
+      "Productos": [
+        1,
+        3
+      ],
+      "PrecioTotal": 33000,
+      "id": 2
+    },
+    {
+      "NombreCliente": "Marlon",
+      "MesaId": 3,
+      "MeseroId": 2,
+      "Productos": [
+        6,
+        10,
+        11
+      ],
+      "PrecioTotal": 41200,
+      "id": 3
+    }
+  ]
+}
