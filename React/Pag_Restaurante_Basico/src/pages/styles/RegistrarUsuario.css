@@ -1,0 +1,46 @@
+form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: 0;
+    background-color: #202020;
+    color: 'white';
+    padding: '20px';
+    width: '300px';
+    border: 2px solid gray;
+    border-radius: 15px;
+    padding: 20px;
+    transform: translate(-50%,-50%);
+}
+
+form input, form select{
+    color: white;
+    width: 80%;
+    background-color: transparent;
+    border: 2px solid gray;
+    border-radius: 5px;
+    outline: none;
+}
+
+form select option{
+    background-color: #232323;
+}
+
+form input, form select, form label{
+    font-size: 20px;
+    display: block;
+    margin-top: 10px;
+}
+
+form button{
+    font-size: 17px;
+    padding: .8px 20px;
+    text-align: center;
+    background-color: lightcoral;
+    margin-top: 10%;
+    border: none;
+    border-radius: 10px;
+}
+form button:hover{
+    background-color: lightgreen;
+}

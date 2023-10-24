@@ -1,0 +1,42 @@
+{
+  "TipoUsuario": [
+    {
+      "id": 1,
+      "Tipo": "Admin"
+    },
+    {
+      "id": 2,
+      "Tipo": "Mesero"
+    }
+  ],
+  "Usuarios": [
+    {
+      "id": 1,
+      "Nombre": "Juan Jose",
+      "TipoUsuarioId": 1
+    },
+    {
+      "id": 2,
+      "Nombre": "Geraldine",
+      "TipoUsuarioId": 2
+    },
+    {
+      "id": 3,
+      "Nombre": "Giseth Tatiana",
+      "TipoUsuarioId": 2
+    },
+    {
+      "id": 4,
+      "Nombre": "Christopher",
+      "TipoUsuarioId": 2
+    }
+  ],
+  "Productos": [
+    {
+      "id": 1,
+      "Nombre": "Arroz Paisa",
+      "Descripcion": "Arroz Paisa para 3 personas con chuleta",
+      "Precio": 37000
+    }
+  ]
+}

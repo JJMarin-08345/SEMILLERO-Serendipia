@@ -1,0 +1,7 @@
+Pasos:
+1- Se hace la creacion del proyecto --> npm init -y
+2- Se instala express --> npm i express
+3- Para usar el import en ves de require, nos vamos al package.json y en cualquier parte ponemos "type": "module"
+4- Instalamos nodemon: npm i nodemon -D || El -D es para instalarlo como dependencia. Esta libreria es para no tener que reiniciar el servidor manualmente cada que hagamos un cambio en este. Para ponerlo en funcionamiento en vez de node archivo.js le decimos nodemon archivo.js; pero yo lo quiero hacer con un script propio, entonces, nos vamos nuevamente al package.json y en el objeto scripts, creamos un nuevo script, en este caso le pondre --> "back": "nodemon miArchivoAEjecutar.js";
+
+
