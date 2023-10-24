@@ -12,22 +12,28 @@ Meseros = JSON.stringify(Meseros, null, 2);
 let Admin = DataDB.Usuarios.filter((admin) => admin.TipoUsuarioId === 1);
 Admin = JSON.stringify(Admin, null, 2);
 
-let Productos = JSON.stringify(DataDB.Productos, null, 2);
+const Productos = JSON.stringify(DataDB.Productos, null, 2);
 
+const Ventas = JSON.stringify(DataDB.Ventas, null, 2);
 
-router.get("/Meseros", (req, res) => {
+router.get("/Usuarios/MostrarMeseros", (req, res) => {
     res.setHeader('Content-Type', 'application/json');
     res.send(Meseros);
 });
 
-router.get("/Admin", (req, res) => {
+router.get("/usuarios/MostrarAdmins", (req, res) => {
     res.setHeader('Content-Type', 'application/json');
     res.send(Admin);
 });
 
-router.get("/Productos", (req, res) =>{
+router.get("/Productos/MostrarProductos", (req, res) =>{
     res.setHeader('Content-Type','application/json');
     res.send(Productos);
+});
+
+router.get("/Ventas/MostrarVentas", (req, res) => {
+    res.setHeader('Content-Type','application/json');
+    res.send(Ventas);
 });
 
 module.exports = router;

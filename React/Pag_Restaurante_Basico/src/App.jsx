@@ -1,11 +1,11 @@
 import './App.css'
-import RegistrarUsuario from './pages/RegistrarUsuario';
+import Login from './pages/Login';
 
 function App() {
 
   return (
     <>
-      <div>Desde App</div>
+      <Login/>
     </>
   )
 }

@@ -3,12 +3,15 @@ import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import RegistrarUsuario from './pages/RegistrarUsuario.jsx'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import './index.css'
-
+import './index.css';
 
 const routes = createBrowserRouter([
   {
     path: "/",
+    element: <App/>
+  },
+  {
+    path: "/RegistrarUsuario",
     element: <RegistrarUsuario/>
   }
 ])

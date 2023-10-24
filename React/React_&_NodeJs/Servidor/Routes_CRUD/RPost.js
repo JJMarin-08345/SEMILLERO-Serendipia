@@ -4,7 +4,7 @@ const { leerBDJSON, actualizarBDJSON } = require('./FunJSON');
 
 const correcto = (entidad) => `Datos de ${entidad} recibido correctamente`;
 
-router.post('/Productos', (req, res) => {
+router.post('/Productos/CrearProducto', (req, res) => {
     const newProducto = req.body;
     if (newProducto) {
         if (newProducto.Precio > 99) {
@@ -13,33 +13,41 @@ router.post('/Productos', (req, res) => {
     }
 });
 
-router.post('/Pedidos', (req, res) => {
+router.post('/Venta/CrearCenta', (req, res) => {
     const newPedido = req.body;
     if (newPedido) {
-        res.status(201).send(correcto('Pedido'))
+        res.status(201).send(correcto('Venta'))
     }
 
 });
 
-router.post('/Usuario', (req, res) => {
-    let newMesero = req.body;
+router.post('/Usuario/CrearUsuario', (req, res) => {
+    let newUsuario = req.body;
     const datosDB = leerBDJSON();
     const lastId = datosDB.Usuarios[(datosDB.Usuarios.length - 1)]?.id || 0;
-    
+
     console.log(lastId);
 
-    newMesero = {
+    newUsuario = {
         id: lastId + 1,
-        ...newMesero,
+        ...newUsuario,
     }
 
-    if (newMesero.Nombre === "" || newMesero.TipoUsuario !== 2) {
+    if (newUsuario.Nombre === '' || newUsuario.TipoUsuario === '' ) {
         res.status(400).json({ error: 'Ausencia de datos' });
     } else {
+        if (newUsuario.TipoUsuario === '1') {
+            console.log(newUsuario);
+            datosDB.Usuarios.push(newUsuario);
+            actualizarBDJSON(datosDB);
+            res.status(201).send(correcto('Administrador'));
 
-        datosDB.Usuarios.push(newMesero);
-        actualizarBDJSON(datosDB);
-        res.status(201).send(correcto('Mesero'));
+        } else if (newUsuario.TipoUsuario === '2') {
+            console.log(newUsuario);
+            datosDB.Usuarios.push(newUsuario);
+            actualizarBDJSON(datosDB);
+            res.status(201).send(correcto('Mesero'));
+        }
     }
 
 });

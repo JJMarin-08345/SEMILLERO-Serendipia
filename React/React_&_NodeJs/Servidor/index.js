@@ -13,7 +13,7 @@ app.use(express.json());
 app.use(cors());
 
 app.use('/GET',RGet);
-app.use('/POST',RPost);
+app.use('',RPost);
 // app.use('/PUT',RPut);
 // app.use('/DEL',RDelete);
 
