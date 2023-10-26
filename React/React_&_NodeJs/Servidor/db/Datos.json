@@ -24,11 +24,6 @@
       "id": 3,
       "Nombre": "Giseth Tatiana",
       "TipoUsuarioId": 2
-    },
-    {
-      "id": 4,
-      "Nombre": "Christopher",
-      "TipoUsuarioId": 2
     }
   ],
   "Productos": [
@@ -81,10 +76,10 @@
     },
     {
       "id": 2,
-      "MeseroId": 3,
+      "MeseroId": 2,
       "ProductosIds": [
-        3,
-        1
+        2,
+        6
       ]
     }
   ]

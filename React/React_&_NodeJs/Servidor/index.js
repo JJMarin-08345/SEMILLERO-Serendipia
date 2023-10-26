@@ -14,7 +14,7 @@ app.use(cors());
 
 app.use('',RGet);
 app.use('',RPost);
+app.use('',RDelete);
 // app.use('/PUT',RPut);
-// app.use('/DEL',RDelete);
 
 app.listen(port);
