@@ -37,7 +37,55 @@
       "Nombre": "Arroz Paisa",
       "Descripcion": "Arroz Paisa para 3 personas con chuleta",
       "Precio": 37000
+    },
+    {
+      "id": 2,
+      "Nombre": "Empanadas Vallunas",
+      "Descripcion": "Empanadas típicas de Cali, rellenas de carne y papas",
+      "Precio": 2500
+    },
+    {
+      "id": 3,
+      "Nombre": "Sancocho de Gallina",
+      "Descripcion": "Sancocho tradicional de Cali con yuca, plátano y maíz",
+      "Precio": 14000
+    },
+    {
+      "id": 4,
+      "Nombre": "Cholado",
+      "Descripcion": "Cholado con frutas frescas y leche condensada",
+      "Precio": 8000
+    },
+    {
+      "id": 5,
+      "Nombre": "Ajiaco Caleño",
+      "Descripcion": "Ajiaco de pollo con papa criolla, maíz y aguacate",
+      "Precio": 18000
+    },
+    {
+      "id": 6,
+      "Nombre": "Lulada",
+      "Descripcion": "Refrescante lulada con hielo",
+      "Precio": "10000"
     }
   ],
-  "Ventas": []
+  "Ventas": [
+    {
+      "id": 1,
+      "MeseroId": 2,
+      "ProductosIds": [
+        1,
+        2,
+        5
+      ]
+    },
+    {
+      "id": 2,
+      "MeseroId": 3,
+      "ProductosIds": [
+        3,
+        1
+      ]
+    }
+  ]
 }

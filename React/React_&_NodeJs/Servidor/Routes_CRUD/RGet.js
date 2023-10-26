@@ -6,34 +6,58 @@ const router = express.Router();
 
 // Traer Meseros "uniendo" la tabla TipoUsuario y Usuario
 let Meseros = DataDB.Usuarios.filter((mesero) => mesero.TipoUsuarioId === 2);
-Meseros = JSON.stringify(Meseros, null, 2);
+Meseros = Meseros;
 
 // Traer Administradores "uniendo" la tabla TipoUsuario y Usuario
 let Admin = DataDB.Usuarios.filter((admin) => admin.TipoUsuarioId === 1);
-Admin = JSON.stringify(Admin, null, 2);
+Admin = Admin;
 
-const Productos = JSON.stringify(DataDB.Productos, null, 2);
+const Productos = DataDB.Productos;
 
-const Ventas = JSON.stringify(DataDB.Ventas, null, 2);
+const Ventas = DataDB.Ventas;
 
+// GET USUARIOS
+// Traer todos los Meseros
 router.get("/Usuarios/MostrarMeseros", (req, res) => {
     res.setHeader('Content-Type', 'application/json');
-    res.send(Meseros);
+    res.status(200).json(Meseros);
 });
 
+// Traer todos los Administradores
 router.get("/usuarios/MostrarAdmins", (req, res) => {
     res.setHeader('Content-Type', 'application/json');
-    res.send(Admin);
+    res.status(200).json(Admin);
 });
 
-router.get("/Productos/MostrarProductos", (req, res) =>{
-    res.setHeader('Content-Type','application/json');
-    res.send(Productos);
+
+//GET PRODUCTOS
+// Traer Todos los Productos
+router.get("/Productos/MostrarProductos", (req, res) => {
+    res.setHeader('Content-Type', 'application/json');
+    res.status(200).json(Productos);
 });
 
+// GET VENTAS
+// Traer Todas las ventas
 router.get("/Ventas/MostrarVentas", (req, res) => {
-    res.setHeader('Content-Type','application/json');
-    res.send(Ventas);
+    res.setHeader('Content-Type', 'application/json');
+    res.status(200).json(Ventas);
+});
+
+// Traer Todas las ventas por mesero
+router.get("/Ventas/VentasXMesero", (req, res) => {
+    const MsroId = parseInt(req.query.MsroId);
+    console.log(MsroId);
+    if (isNaN(MsroId)) {
+        res.status(400).json({ error: 'El parametro MeseroId es invalido' })
+    } else {
+        const VentasXMsro = DataDB.Ventas.filter((ventas) => ventas.MeseroId === MsroId);
+        if(VentasXMsro.length>0){
+            res.status(200).json(VentasXMsro);
+        }else{
+            res.status(404).json({error: "El mesero no tiene ventas"});
+        }
+    }
 });
 
 module.exports = router;
